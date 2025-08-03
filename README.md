@@ -38,3 +38,36 @@ df['electricity_access'] = df['household has: electricity'].map({'Yes': 1, 'No':
 
 # Save cleaned data
 df.to_csv('cleaned_rwanda_dhs.csv', index=False)
+Notebook Sections:
+
+Data loading
+
+Column filtering (keep only relevant variables)
+
+Missing value handling
+
+Export to CSV for Power BI
+
+###. Power BI Component
+Files to Include:
+
+powerbi_dashboard.pbix with:
+
+4-5 key visuals (e.g., electricity vs. internet, water time poverty)
+
+Interactive filters (residence type, roof material)
+
+Consistent color scheme
+
+Export Instructions:
+
+In Power BI: File → Save As (ensure data source paths are relative)
+
+Include a PDF/PPT export of the dashboard for backup.
+###Dataset Link
+Hosting: Upload cleaned data to GitHub or a cloud drive (Google Drive/Dropbox).
+
+##README Note:
+Data Source
+[Rwanda DHS 2020](https://dhsprogram.com/data/Using-Datasets-for-Analysis.cfm)  
+*Cleaned subset*: [Download here](your_cleaned_data_link)  
