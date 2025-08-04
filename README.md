@@ -79,6 +79,46 @@ import pandas as pd
 
 # Load data
 df = pd.read_csv('rwanda_dhs_2020.csv')
+# Step-by-Step Code to Filter Relevant Columns
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv(r'C:\Users\hp\Desktop\note\Summer 2\INTRO TO BIG DATA\final project\denis.csv')
+
+# Define the relevant column names (copied EXACTLY as they appear in your dataset)
+relevant_cols = [
+    'type of place of residence',
+    'source of drinking water',
+    'time to get to water source',
+    'type of toilet facility',
+    'toilet facilities shared with other households',
+    'household has: electricity',
+    'household has: radio',
+    'household has: television',
+    'main floor material',
+    'main wall material',
+    'main roof material',
+    'type of cooking fuel',
+    'use of internet',
+    'frequency of listening to radio',
+    'frequency of watching television',
+    'frequency of reading newspaper or magazine',
+    'Exposed to media',
+    'BMI Categories'
+]
+
+# Ensure columns exist (ignore missing ones and drop duplicates)
+existing_cols = list(dict.fromkeys([col for col in relevant_cols if col in df.columns]))
+
+# Filter the dataset
+df_filtered = df[existing_cols]
+
+# Save the filtered dataset
+df_filtered.to_csv('rwanda_basic_services_cleaned.csv', index=False)
+
+# Preview the filtered data
+print(df_filtered.shape)
+df_filtered.head()
 
 # Clean columns (example)
 df['electricity_access'] = df['household has: electricity'].map({'Yes': 1, 'No': 0})
